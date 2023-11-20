@@ -23,7 +23,10 @@ public class TaskConverter {
         dto.setStatus(task.getStatus());
         dto.setManagerCreateResponseDTO(new ManagerCreateResponseDTO(
                 task.getManager().getId(),
-                task.getManager().getManagerName()));
+                task.getManager().getManagerName(),
+                task.getManager().getCreateManagerDate(),
+                task.getManager().getLastUpdate()));
+
 
         return dto;
     }
