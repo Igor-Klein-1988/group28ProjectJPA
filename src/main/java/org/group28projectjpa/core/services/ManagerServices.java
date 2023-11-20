@@ -43,7 +43,7 @@ public class ManagerServices {
             newManager = repository.save(newManager);
             return converter.toCreateDto(newManager);
         } else {
-            throw new IsAlreadyExistException("Manager with email " + requestDTO.getEmail() + " is already exist!")
+            throw new IsAlreadyExistException("Manager with email " + requestDTO.getEmail() + " is already exist!");
         }
     }
 
