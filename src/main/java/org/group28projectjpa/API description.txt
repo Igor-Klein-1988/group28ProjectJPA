@@ -185,3 +185,24 @@ Response: HTTP 204 No Content
 Method: GET
 URL:/api/admin/tasks
 
+Response:
+
+[
+    {
+        "id": 1,
+        "taskName": "Task1",
+        "description": "Update description task1",
+        "createDate": "2023-08-08T20:56:00",
+        "lastUpdate": "2023-08-08T21:10:00",
+        "deadline": "2023-08-10T10:00:00",
+        "status": "Close"
+        "manager": {
+                "id": 1,
+                "managername": "managername1",
+                "email": "manager@gmail.com",
+                "createDate": "2023-08-08T20:56:00",
+                "lastUpdate": "2023-08-08T21:10:00"
+                }
+    }
+]
+
