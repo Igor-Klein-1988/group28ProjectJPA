@@ -7,18 +7,16 @@ import org.group28projectjpa.dto.manager.ManagerResponseDTO;
 import org.group28projectjpa.entity.Manager;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
 
 @Service
 public class ManagerConverter {
 
     public ManagerCreateResponseDTO toCreateDto(Manager manager) {
-        return new ManagerCreateResponseDTO(manager.getId(), manager.getManagerName(), LocalDateTime.now(),LocalDateTime.now());
+        return new ManagerCreateResponseDTO(manager.getId(), manager.getManagerName());
     }
 
     public ManagerResponseDTO toDto(Manager manager) {
-        return new ManagerResponseDTO(manager.getId(), manager.getManagerName(), manager.getEmail(),LocalDateTime.now(),LocalDateTime.now());
+        return new ManagerResponseDTO(manager.getId(), manager.getManagerName(), manager.getEmail());
     }
 
     public Manager fromDto(ManagerCreateRequestDTO dto) {
