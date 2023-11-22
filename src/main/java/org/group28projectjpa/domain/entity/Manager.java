@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Manager {
 
     @NotBlank(message = "Password name must be not blank")
     @Pattern(regexp = "^[A-Za-z0-9!@#$%^&*()]+$", message = "Password must contain latin letters and digit and some special characters only")
+    @Size(min = 5,max = 15, message = "Password length must be between 3 and 15")
     private String password;
 
     @NotBlank(message = "Email must be not blank")
