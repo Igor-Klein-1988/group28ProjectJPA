@@ -41,7 +41,7 @@ Response:
 
 1. Создать новую задачу
 Method: POST
-URL: /api/task
+URL: /api/user/task
 
 Request body:
 [
@@ -72,7 +72,7 @@ Response:
 
 2. Редактировать задачу
 Method:PUT
-URL:/api/tasks
+URL:/api/user/task
 
 Request body:
 [
@@ -105,17 +105,17 @@ Response:
 
 3. Удалить задачу
 Method:Delete
-URL:/api/tasks/{id}
+URL:/api/user/task/{id}
 
 Response: HTTP 204 No Content
 
 
-Запрос пользователя для регистрации:
-------------------------------------------
+Запрос администратора для регистрации нового пользователя:
+------------------------------------------------------
 
 1. Создать нового пользователя
 Method:POST
-URL:/api/managers
+URL:/api/admin/managers
 
 Request body:
 [

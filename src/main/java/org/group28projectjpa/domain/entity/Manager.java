@@ -40,6 +40,10 @@ public class Manager {
     @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL)
     private List<Task> tasks;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id")
+    private Role role;
+
 
 
 }

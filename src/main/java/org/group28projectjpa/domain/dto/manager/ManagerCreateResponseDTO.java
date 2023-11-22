@@ -10,5 +10,6 @@ public class ManagerCreateResponseDTO {
 
     private Integer id;
     private String managerName;
+    private String email;
 
 }

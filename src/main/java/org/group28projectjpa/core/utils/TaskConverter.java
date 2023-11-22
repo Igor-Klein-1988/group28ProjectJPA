@@ -6,6 +6,7 @@ import org.group28projectjpa.domain.dto.task.TaskCreateOrUpdateResponseDTO;
 import org.group28projectjpa.domain.dto.task.TaskCreateRequestDTO;
 import org.group28projectjpa.domain.dto.task.TaskResponseDTO;
 import org.group28projectjpa.domain.dto.task.TaskUpdateRequestDTO;
+import org.group28projectjpa.domain.entity.Role;
 import org.group28projectjpa.domain.entity.Task;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +22,13 @@ public class TaskConverter {
         dto.setLastUpdate(task.getLastUpdate());
         dto.setDeadline(task.getDeadline());
         dto.setStatus(task.getStatus());
+
+        Role managerRole = task.getManager().getRole();
+
         dto.setManagerCreateResponseDTO(new ManagerCreateResponseDTO(
                 task.getManager().getId(),
-                task.getManager().getManagerName()));
+                task.getManager().getManagerName(),
+                managerRole.getName()));
 
         return dto;
     }

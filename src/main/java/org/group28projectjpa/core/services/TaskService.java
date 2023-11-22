@@ -29,6 +29,13 @@ public class TaskService {
     private final ManagerService managerService;
 
 
+    // Получить список всех task для запроса Admin
+
+    public List<Task> findAllForAdmin() {
+        return repository.findAll();
+    }
+
+
     // Получить список всех task
 
     public List<TaskResponseDTO> findAll() {
