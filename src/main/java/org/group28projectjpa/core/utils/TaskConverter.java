@@ -24,6 +24,7 @@ public class TaskConverter {
         dto.setManagerCreateResponseDTO(new ManagerCreateResponseDTO(
                 task.getManager().getId(),
                 task.getManager().getManagerName(),
+                task.getManager().getEmail(),
                 task.getManager().getCreateManagerDate(),
                 task.getManager().getLastUpdate()));
 

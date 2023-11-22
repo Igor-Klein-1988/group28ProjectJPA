@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class ManagerConverter {
 
     public ManagerCreateResponseDTO toCreateDto(Manager manager) {
-        return new ManagerCreateResponseDTO(manager.getId(), manager.getManagerName(), LocalDateTime.now(),LocalDateTime.now());
+        return new ManagerCreateResponseDTO(manager.getId(), manager.getManagerName(), manager.getEmail(), LocalDateTime.now(),LocalDateTime.now());
     }
 
     public ManagerResponseDTO toDto(Manager manager) {
