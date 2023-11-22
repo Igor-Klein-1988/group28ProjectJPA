@@ -1,12 +1,12 @@
 package org.group28projectjpa.core.utils;
 
 
-import org.group28projectjpa.dto.manager.ManagerCreateResponseDTO;
-import org.group28projectjpa.dto.task.TaskCreateOrUpdateResponseDTO;
-import org.group28projectjpa.dto.task.TaskCreateRequestDTO;
-import org.group28projectjpa.dto.task.TaskResponseDTO;
-import org.group28projectjpa.dto.task.TaskUpdateRequestDTO;
-import org.group28projectjpa.entity.Task;
+import org.group28projectjpa.domain.dto.manager.ManagerCreateResponseDTO;
+import org.group28projectjpa.domain.dto.task.TaskCreateOrUpdateResponseDTO;
+import org.group28projectjpa.domain.dto.task.TaskCreateRequestDTO;
+import org.group28projectjpa.domain.dto.task.TaskResponseDTO;
+import org.group28projectjpa.domain.dto.task.TaskUpdateRequestDTO;
+import org.group28projectjpa.domain.entity.Task;
 import org.springframework.stereotype.Service;
 
 @Service

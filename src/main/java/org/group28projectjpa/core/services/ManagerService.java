@@ -4,15 +4,14 @@ package org.group28projectjpa.core.services;
 import org.group28projectjpa.core.utils.ManagerConverter;
 import org.group28projectjpa.core.validation.IsAlreadyExistException;
 import org.group28projectjpa.core.validation.NotFoundException;
-import org.group28projectjpa.dto.manager.ManagerCreateRequestDTO;
-import org.group28projectjpa.dto.manager.ManagerCreateResponseDTO;
-import org.group28projectjpa.dto.manager.ManagerResponseDTO;
-import org.group28projectjpa.entity.Manager;
+import org.group28projectjpa.domain.dto.manager.ManagerCreateRequestDTO;
+import org.group28projectjpa.domain.dto.manager.ManagerCreateResponseDTO;
+import org.group28projectjpa.domain.dto.manager.ManagerResponseDTO;
+import org.group28projectjpa.domain.entity.Manager;
 import org.group28projectjpa.repository.ManagerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -34,17 +33,18 @@ public class ManagerService {
                 .collect(Collectors.toList());
     }
 
-    // Найти пользователя по имени
+    // Найти пользователя по имени для запроса Админа
     public ManagerResponseDTO findByManagerName(String managerName) {
         Manager manager = repository.findByManagerName(managerName).orElseThrow(() -> new NotFoundException("Manager not found with name: " + managerName));
         return converter.toDto(manager);
     }
 
-    // Найти пользователя по имени
+    // Найти пользователя по имени для создания нового task
     public Manager findByManagerNameForCreateTask(String managerName) {
         Manager manager = repository.findByManagerName(managerName).orElseThrow(() -> new NotFoundException("Manager not found with name: " + managerName));
         return manager;
     }
+
 
     // Создать нового пользователя
 

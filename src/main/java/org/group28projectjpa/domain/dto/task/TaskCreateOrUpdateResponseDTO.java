@@ -1,11 +1,11 @@
-package org.group28projectjpa.dto.task;
+package org.group28projectjpa.domain.dto.task;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.group28projectjpa.dto.manager.ManagerCreateResponseDTO;
-import org.group28projectjpa.entity.TaskStatus;
+import org.group28projectjpa.domain.dto.manager.ManagerCreateResponseDTO;
+import org.group28projectjpa.domain.entity.TaskStatus;
 
 import java.time.LocalDateTime;
 

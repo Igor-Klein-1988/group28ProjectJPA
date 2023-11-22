@@ -1,4 +1,4 @@
-package org.group28projectjpa.dto.task;
+package org.group28projectjpa.domain.dto.task;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

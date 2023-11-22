@@ -1,4 +1,4 @@
-package org.group28projectjpa.entity;
+package org.group28projectjpa.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

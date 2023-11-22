@@ -1,10 +1,10 @@
 package org.group28projectjpa.core.utils;
 
 
-import org.group28projectjpa.dto.manager.ManagerCreateRequestDTO;
-import org.group28projectjpa.dto.manager.ManagerCreateResponseDTO;
-import org.group28projectjpa.dto.manager.ManagerResponseDTO;
-import org.group28projectjpa.entity.Manager;
+import org.group28projectjpa.domain.dto.manager.ManagerCreateRequestDTO;
+import org.group28projectjpa.domain.dto.manager.ManagerCreateResponseDTO;
+import org.group28projectjpa.domain.dto.manager.ManagerResponseDTO;
+import org.group28projectjpa.domain.entity.Manager;
 import org.springframework.stereotype.Service;
 
 

@@ -1,4 +1,4 @@
-package org.group28projectjpa.dto.manager;
+package org.group28projectjpa.domain.dto.manager;
 
 
 import lombok.AllArgsConstructor;
