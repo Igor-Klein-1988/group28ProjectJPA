@@ -6,12 +6,12 @@ import lombok.AllArgsConstructor;
 import org.group28projectjpa.core.services.ManagerService;
 import org.group28projectjpa.domain.dto.manager.ManagerCreateRequestDTO;
 import org.group28projectjpa.domain.dto.manager.ManagerCreateResponseDTO;
+import org.group28projectjpa.domain.dto.manager.ManagerResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -24,5 +24,10 @@ public class ManagerController {
     @PostMapping
     public ResponseEntity<ManagerCreateResponseDTO> createNewManager(@Valid @RequestBody ManagerCreateRequestDTO request) {
         return new ResponseEntity<>(managerService.createManager(request), HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ManagerResponseDTO>> findAllManager() {
+        return new ResponseEntity<>(managerService.findAllManagers(), HttpStatus.OK);
     }
 }

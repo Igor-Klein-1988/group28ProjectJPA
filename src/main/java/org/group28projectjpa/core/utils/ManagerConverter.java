@@ -19,7 +19,7 @@ public class ManagerConverter {
         return new ManagerResponseDTO(manager.getId(), manager.getManagerName(), manager.getEmail());
     }
 
-    public Manager fromDto(ManagerCreateRequestDTO dto) {
+    public Manager  fromDto(ManagerCreateRequestDTO dto) {
         Manager newManager = new Manager();
         if (dto.getManagerName() != null) {
             newManager.setManagerName(dto.getManagerName());

@@ -11,6 +11,7 @@ import org.group28projectjpa.domain.entity.Manager;
 import org.group28projectjpa.repository.ManagerRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,6 +52,8 @@ public class ManagerService {
     public ManagerCreateResponseDTO createManager(ManagerCreateRequestDTO requestDTO) {
         if (repository.findByManagerName(requestDTO.getManagerName()).isEmpty()) {
             Manager newManager = converter.fromDto(requestDTO);
+            newManager.setCreateManagerDate(LocalDateTime.now());
+            newManager.setLastUpdate(LocalDateTime.now());
 
             Manager savedManager = repository.save(newManager);
             return converter.toCreateDto(savedManager);
