@@ -26,13 +26,13 @@
 
 
 
-    <changeSet id="insert.default.manager" author="author">
-        <insert tableName="manager">
-            <column name="manager_name" value="Administrator"></column>
-            <column name="password" value="pass12345"></column>
-            <column name="email" value="admin@company.com"></column>
-        </insert>
+<!--    <changeSet id="insert.default.manager" author="author">-->
+<!--        <insert tableName="manager">-->
+<!--            <column name="manager_name" value="Administrator"></column>-->
+<!--            <column name="password" value="pass12345"></column>-->
+<!--            <column name="email" value="admin@company.com"></column>-->
+<!--        </insert>-->
 
-    </changeSet>
+<!--    </changeSet>-->
 
 </databaseChangeLog>
