@@ -1,6 +1,9 @@
 package org.group28projectjpa.domain.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +19,19 @@ public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotBlank(message = "Manager name must be not blank")
+    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "Manager name must contain latin letters and digit only")
     private String managerName;
+
+    @NotBlank(message = "Password name must be not blank")
+    @Pattern(regexp = "^[A-Za-z0-9!@#$%^&*()]+$", message = "Password must contain latin letters and digit and some special characters only")
     private String password;
+
+    @NotBlank(message = "Email must be not blank")
+    @Email(message = "Invalid email format")
     private String email;
+
     private LocalDateTime createManagerDate;
     private LocalDateTime lastUpdate;
 
