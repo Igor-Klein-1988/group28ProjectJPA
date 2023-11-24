@@ -2,6 +2,7 @@ package org.group28projectjpa.controllers;
 
 
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.group28projectjpa.core.services.TaskService;
 import org.group28projectjpa.domain.dto.task.TaskCreateOrUpdateResponseDTO;
@@ -27,7 +28,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<TaskCreateOrUpdateResponseDTO> createNewTask(@RequestBody TaskCreateRequestDTO request) {
+    public ResponseEntity<TaskCreateOrUpdateResponseDTO> createNewTask(@Valid @RequestBody TaskCreateRequestDTO request) {
         return new ResponseEntity<>(taskService.createTask(request), HttpStatus.CREATED);
     }
 

@@ -24,26 +24,26 @@
     </changeSet>
 
 
-    <changeSet id="insert.default.newRoles" author="author">
-        <insert tableName="roles">
-            <column name="name" value="manager">
-            </column>
-        </insert>
-    </changeSet>
+<!--    <changeSet id="insert.default.newRoles" author="author">-->
+<!--        <insert tableName="roles">-->
+<!--            <column name="name" value="manager">-->
+<!--            </column>-->
+<!--        </insert>-->
+<!--    </changeSet>-->
 
-    <changeSet id="addFieldToTable" author="author2">
-        <addColumn tableName="manager">
-            <column name="isActive" type="boolean" defaultValue="true"> </column>
-        </addColumn>
-    </changeSet>
+<!--    <changeSet id="addFieldToTable" author="author2">-->
+<!--        <addColumn tableName="manager">-->
+<!--            <column name="isActive" type="boolean" defaultValue="true"> </column>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
 
-    <changeSet id="insert.default.manager" author="author">
-        <insert tableName="manager">
-            <column name="manager_name" value="Administrator"></column>
-            <column name="password" value="pass12345"></column>
-            <column name="email" value="admin@company.com"></column>
-        </insert>
+<!--    <changeSet id="insert.default.manager" author="author">-->
+<!--        <insert tableName="manager">-->
+<!--            <column name="manager_name" value="Administrator"></column>-->
+<!--            <column name="password" value="pass12345"></column>-->
+<!--            <column name="email" value="admin@company.com"></column>-->
+<!--        </insert>-->
 
-    </changeSet>
+<!--    </changeSet>-->
 
 </databaseChangeLog>
