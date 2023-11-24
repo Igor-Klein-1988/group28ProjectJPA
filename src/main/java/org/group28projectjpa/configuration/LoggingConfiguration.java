@@ -5,12 +5,12 @@ import jakarta.servlet.ServletRequestAttributeEvent;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import java.util.Arrays;
 
 @Aspect
 @Component
@@ -39,9 +39,22 @@ public class LoggingConfiguration {
 
     @Before("serviceLog()")
     public void doBeforeServiceLog(JoinPoint joinPoint) {
-        log.info(" RUN SERVICE: /n SERVICE_METHOD: {}.{}",
+        log.info(" RUN SERVICE: \n SERVICE_METHOD: {}.{}",
                 joinPoint.getSignature().getDeclaringTypeName(),
                 joinPoint.getSignature().getName());
+    }
+
+    @AfterReturning(returning = "returnObject", pointcut = "controllerLog()")
+    public void doAfterReturn(Object returnObject){
+        if (log.isInfoEnabled()) {
+            log.info("RETURN VALUE: {}\n END REQUEST!", returnObject);
+        }
+    }
+
+    @AfterThrowing(throwing = "exception", pointcut = "controllerLog()")
+    public void throwException(JoinPoint joinPoint, Exception exception) {
+        log.error(" Request throw an exception. Cause - {}.{}",
+                Arrays.toString(joinPoint.getArgs()), exception.getMessage());
     }
 
 
