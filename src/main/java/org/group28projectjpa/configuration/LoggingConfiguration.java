@@ -29,7 +29,7 @@ public class LoggingConfiguration {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         assert attributes != null;
         HttpServletRequest request = attributes.getRequest();
-        log.info("NEW REQUEST: \n IP: {}\n URL: {}\n HTTP_METHOD; {}\n CONTROLLER_METHOD: {}.{}",
+        log.info("\n NEW REQUEST: \n IP: {}\n URL: {}\n HTTP_METHOD: {}\n CONTROLLER_METHOD: {}.{}",
                 request.getRemoteAddr(),
                 request.getRequestURL().toString(),
                 request.getMethod(),
